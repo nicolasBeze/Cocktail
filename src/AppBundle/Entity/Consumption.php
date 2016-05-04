@@ -6,25 +6,43 @@
  * Time: 19:14
  */
 
-namespace Cocktail\Entity;
+namespace AppBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
 
+/**
+ * Class Consumption
+ * @ORM\Table()
+ * @ORM\Entity()
+ * @package AppBundle\Entity
+ */
 class Consumption {
 
     /**
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      * @var integer
      */
     private $id;
 
     /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Cocktail")
+     * @ORM\JoinColumn(nullable=false)
      * @var Cocktail
      */
     private $cocktail;
 
     /**
+     * @ORM\Column(name="date", type="date")
      * @var Datetime
      */
     private $date;
+
+    public function __construct()
+    {
+        $this->date = new \DateTime();
+    }
 
     /**
      * @return int

@@ -6,31 +6,48 @@
  * Time: 19:19
  */
 
-namespace Cocktail\Entity;
+namespace AppBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
 
+/**
+ * Class Compartment
+ * @ORM\Table()
+ * @ORM\Entity()
+ * @package AppBundle\Entity
+ */
 class Compartment {
 
     /**
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      * @var integer
      */
     private $id;
 
     /**
+     * @ORM\Column(name="libelle", type="string", length=255)
      * @var string
      */
     private $libelle;
 
     /**
+     * @ORM\Column(name="volume", type="integer")
      * Volume to centiliter
      * @var integer
      */
     private $volume;
 
     /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Drink")
+     * @ORM\JoinColumn(nullable=false)
      * @var Drink
      */
     private $drink;
+
+
+
 
     /**
      * @return int

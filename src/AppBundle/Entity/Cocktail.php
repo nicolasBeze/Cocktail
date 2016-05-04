@@ -6,34 +6,47 @@
  * Time: 18:15
  */
 
-namespace Cocktail\Entity;
+namespace AppBundle\Entity;
 
-
+use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
 
+/**
+ * Class Cocktail
+ * @ORM\Table()
+ * @ORM\Entity()
+ * @package AppBundle\Entity
+ */
 class Cocktail
 {
     /**
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      * @var integer
      */
     private $id;
 
     /**
+     * @ORM\Column(name="name", type="string", length=255)
      * @var string
      */
     private $name;
 
     /**
+     * @ORM\Column(name="description", type="text")
      * @var string
      */
     private $description;
 
     /**
+     * @ORM\Column(name="image", type="string", length=255)
      * @var string
      */
     private $image;
 
     /**
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Dose", cascade={"persist"})
      * @var ArrayCollection
      */
     private $doses;

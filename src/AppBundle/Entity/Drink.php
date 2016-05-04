@@ -6,32 +6,40 @@
  * Time: 18:19
  */
 
-namespace Cocktail\Entity;
+namespace AppBundle\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
 
+/**
+ * Class Drink
+ * @ORM\Table()
+ * @ORM\Entity()
+ * @package Cocktail\Entity
+ */
 class Drink {
 
     /**
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
      * @var integer
      */
     private $id;
 
     /**
+     * @ORM\Column(name="name", type="string", length=255)
      * @var string
      */
     private $name;
 
     /**
-     * @var string
-     */
-    private $description;
-
-    /**
+     * @ORM\Column(name="image", type="string", length=255)
      * @var string
      */
     private $image;
 
     /**
+     * @ORM\Column(name="volume", type="integer")
      * Volume to centiliter
      * @var integer
      */
