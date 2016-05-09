@@ -40,8 +40,9 @@ class Cocktail
     private $description;
 
     /**
-     * @ORM\Column(name="image", type="string", length=255)
-     * @var string
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Image", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=true)
+     * @var Image
      */
     private $image;
 
@@ -105,7 +106,7 @@ class Cocktail
     }
 
     /**
-     * @return string
+     * @return Image
      */
     public function getImage()
     {
@@ -113,7 +114,7 @@ class Cocktail
     }
 
     /**
-     * @param string $image
+     * @param Image $image
      */
     public function setImage($image)
     {

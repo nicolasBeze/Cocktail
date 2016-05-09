@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Boissons:</h1>
+    <h2>Ajouter:</h2>
+    <div>
+        {{ form_start(form) }}
+        {{ form_widget(form) }}
+        {{ form_end(form) }}
+    </div>
+    <h2>Liste:</h2>
+    <ul>
+        {% for drink in drinks %}
+            <li>
+                <div >
+                    <h3>{{ drink.name }}</h3>
+                    {{ drink.volume }}
+                    <div class="image">
+                        <img src="{{ asset('bundles/app/images/'~drink.image.url) }}" alt="{{ drink.image.alt }}" />
+                    </div>
+                    <a href="{{ path('deleteDrink', { 'id': drink.id }) }}">Supprimer</a>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
+
+

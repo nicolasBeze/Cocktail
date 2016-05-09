@@ -3,6 +3,7 @@
 namespace AppBundle\DataFixtures\ORM;
 
 use AppBundle\Entity\Drink;
+use AppBundle\Entity\Image;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -18,10 +19,15 @@ class LoadDrinkData extends AbstractFixture implements OrderedFixtureInterface
     public function load(ObjectManager $manager)
     {
         foreach ($this->arrayData() as $data){
+            $image = new Image();
+            $image->setAlt($data['image']);
+            $image->setUrl($data['image']);
+
             $drink = new Drink();
             $drink->setName($data['name']);
-            $drink->setImage($data['image']);
+            $drink->setImage($image);
             $drink->setVolume($data['volume']);
+
             $manager->persist($drink);
             $this->addReference($data['name'], $drink);
         }

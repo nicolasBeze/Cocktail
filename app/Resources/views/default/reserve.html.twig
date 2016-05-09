@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+        {% for compartment in compartments %}
+            <div style="width: 230px; float:left; background-color: white; margin: 10px">
+                {% set percent = ((compartment.volume / compartment.drink.volume)*100) |round %}
+                {{ compartment.libelle }} : <br>
+                {{ compartment.drink.name }} {{ compartment.drink.volume }} cl<br>
+                <div style="width: 200px; border:1px solid #000; margin-left: 0px;">
+                    <div style="background-color:#FE3210; width:{{ percent }}%">{{ percent }}%</div s>
+                </div>
+            </div>
+        {% endfor %}
+
+{% endblock %}
+
+

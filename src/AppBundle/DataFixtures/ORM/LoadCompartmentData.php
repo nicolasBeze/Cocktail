@@ -40,37 +40,37 @@ class LoadCompartmentData extends AbstractFixture implements OrderedFixtureInter
             [
                 'drink'   => 'Whisky',
                 'libelle'  => 'Compartiment 1',
-                'volume' => 70,
+                'volume' => 60,
             ],
             [
                 'drink'   => 'Vodka',
                 'libelle'  => 'Compartiment 2',
-                'volume' => 70,
+                'volume' => 50,
             ],
             [
                 'drink'   => 'Rhum blanc',
                 'libelle'  => 'Compartiment 3',
-                'volume' => 70,
+                'volume' => 36,
             ],
             [
                 'drink'   => 'Rhum brun',
                 'libelle'  => 'Compartiment 4',
-                'volume' => 70,
+                'volume' => 12,
             ],
             [
                 'drink'   => 'Tequila',
                 'libelle'  => 'Compartiment 5',
-                'volume' => 70,
+                'volume' => 8,
             ],
             [
                 'drink'   => 'Triple sec',
                 'libelle'  => 'Compartiment 6',
-                'volume' => 70,
+                'volume' => 0,
             ],
             [
                 'drink'   => 'Curaçao bleu',
                 'libelle'  => 'Compartiment 7',
-                'volume' => 70,
+                'volume' => 24,
             ],
             [
                 'drink'   => 'Passoa',
@@ -80,7 +80,7 @@ class LoadCompartmentData extends AbstractFixture implements OrderedFixtureInter
             [
                 'drink'   => 'Sucre de canne',
                 'libelle'  => 'Compartiment 9',
-                'volume' => 70,
+                'volume' => 18,
             ],
             [
                 'drink'   => 'Sirop de citrons',
@@ -95,17 +95,17 @@ class LoadCompartmentData extends AbstractFixture implements OrderedFixtureInter
             [
                 'drink'   => 'Jus d\'oranges',
                 'libelle'  => 'Compartiment 12',
-                'volume' => 100,
+                'volume' => 10,
             ],
             [
                 'drink'   => 'Jus de pommes',
                 'libelle'  => 'Compartiment 13',
-                'volume' => 100,
+                'volume' => 20,
             ],
             [
                 'drink'   => 'Jus d\'ananas',
                 'libelle'  => 'Compartiment 14',
-                'volume' => 100,
+                'volume' => 30,
             ]
         ];
     }

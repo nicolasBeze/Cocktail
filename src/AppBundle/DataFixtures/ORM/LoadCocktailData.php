@@ -10,6 +10,7 @@ namespace AppBundle\DataFixtures\ORM;
 
 
 use AppBundle\Entity\Cocktail;
+use AppBundle\Entity\Image;
 use Doctrine\Common\DataFixtures\AbstractFixture;
 use Doctrine\Common\DataFixtures\OrderedFixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
@@ -19,10 +20,14 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
     public function load(ObjectManager $manager)
     {
         foreach ($this->arrayData() as $data){
+            $image = new Image();
+            $image->setAlt($data['image']);
+            $image->setUrl($data['image']);
+
             $cocktail = new Cocktail();
             $cocktail->setName($data['name']);
             $cocktail->setDescription($data['description']);
-            $cocktail->setImage($data['image']);
+            $cocktail->setImage($image);
             foreach ($data['doses'] as $dose){
                 $cocktail->addDose($this->getReference($dose));
             }
@@ -43,7 +48,7 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
             [
                 'name'  => 'Tequila Sunrise',
                 'description'   => '',
-                'image' => '',
+                'image' => 'tequila-sunrise.jpg',
                 'doses' => [
                     'Tequila6',
                     'Jus d\'oranges12',
@@ -53,7 +58,7 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
             [
                 'name'  => 'Vodka Pomme',
                 'description'   => '',
-                'image' => '',
+                'image' => 'vodka-pomme.jpg',
                 'doses' => [
                     'Vodka3',
                     'Jus de pommes10'

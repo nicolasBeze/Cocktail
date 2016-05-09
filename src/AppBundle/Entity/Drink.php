@@ -33,8 +33,9 @@ class Drink {
     private $name;
 
     /**
-     * @ORM\Column(name="image", type="string", length=255)
-     * @var string
+     * @ORM\OneToOne(targetEntity="AppBundle\Entity\Image", cascade={"persist"})
+     * @ORM\JoinColumn(nullable=true)
+     * @var Image
      */
     private $image;
 
@@ -94,7 +95,7 @@ class Drink {
     }
 
     /**
-     * @return string
+     * @return Image
      */
     public function getImage()
     {
@@ -102,7 +103,7 @@ class Drink {
     }
 
     /**
-     * @param string $image
+     * @param Image $image
      */
     public function setImage($image)
     {

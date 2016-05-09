@@ -2,12 +2,29 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        <title>{% block title %}Cocktail{% endblock %}</title>
+        {% block stylesheets %}
+            {% stylesheets '@AppBundle/Resources/public/css/*' filter='cssrewrite' %}
+            <link rel="stylesheet" href="{{ asset_url }}" />
+            {% endstylesheets %}
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
+        {% block menu %}
+            <ul id="menu_horizontal">
+                <li><a href="{{ path('homepage') }}">Home</a></li>
+                <li><a href="{{ path('reserve') }}">Réserve</a></li>
+                <li><a href="{{ path('drink') }}">Boissons</a></li>
+                <li><a href="{{ path('cocktail') }}">Cocktails</a></li>
+            </ul>
+        {% endblock %}
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+            <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+            {% javascripts '@AppBundle/Resources/public/js/*' %}
+            <script src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+        {% endblock %}
     </body>
 </html>

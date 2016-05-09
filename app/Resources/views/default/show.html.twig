@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="listCocktail">
+        <h2>{{ cocktail.name }}</h2>
+        {{ cocktail.description }}<br>
+        <div class="image">
+            <img src="{{ asset('bundles/app/images/'~cocktail.image) }}" alt="{{ cocktail.image }}" />
+        </div>
+        <div class="infoListCocktail">
+            {% for dose in cocktail.doses %}
+                <span class="pastille">{{ dose.drink.name }}</span> {{ dose.volume }} cl.<br>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}
+
+
