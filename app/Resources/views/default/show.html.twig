@@ -5,7 +5,7 @@
         <h2>{{ cocktail.name }}</h2>
         {{ cocktail.description }}<br>
         <div class="image">
-            <img src="{{ asset('bundles/app/images/'~cocktail.image) }}" alt="{{ cocktail.image }}" />
+            <img src="{{ asset('bundles/app/images/'~cocktail.image.url) }}" alt="{{ cocktail.image.alt }}" />
         </div>
         <div class="infoListCocktail">
             {% for dose in cocktail.doses %}

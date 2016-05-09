@@ -1,27 +1,25 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <ul>
+    <section class="row">
     {% for cocktail in cocktails %}
-       <li>
-           <div class="listCocktail">
-               <a href="{{ path('showCocktail', { 'id': cocktail.id }) }}">
-                   <h2>{{ cocktail.name }}</h2>
-               </a>
-               <a href="{{ path('showCocktail', { 'id': cocktail.id }) }}">
-                   <div class="image">
-                       <img src="{{ asset('bundles/app/images/'~cocktail.image) }}" alt="{{ cocktail.image }}" />
-                   </div>
-               </a>
-               <div class="infoListCocktail">
-               {% for dose in cocktail.doses %}
-                       <span class="pastille">{{ dose.drink.name }}</span> {{ dose.volume }} cl.<br>
-               {% endfor %}
+        <div class="col-xs-6 col-sm-4 col-md-3">
+           <a href="{{ path('showCocktail', { 'id': cocktail.id }) }}">
+               <h2>{{ cocktail.name }}</h2>
+           </a>
+           <a href="{{ path('showCocktail', { 'id': cocktail.id }) }}">
+               <div class="image">
+                   <img src="{{ asset('bundles/app/images/'~cocktail.image.url) }}" alt="{{ cocktail.image.alt }}" />
                </div>
+           </a>
+           <div class="infoListCocktail">
+           {% for dose in cocktail.doses %}
+                   <span class="pastille">{{ dose.drink.name }}</span> {{ dose.volume }} cl.<br>
+           {% endfor %}
            </div>
-       </li>
+       </div>
     {% endfor %}
-    </ul>
+    </section>
 {% endblock %}
 
 
