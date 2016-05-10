@@ -45,72 +45,72 @@ class LoadDrinkData extends AbstractFixture implements OrderedFixtureInterface
         return [
             [
                 'name'   => 'Whisky',
-                'image'  => '',
+                'image' => 'tequila-sunrise.jpg',   
                 'volume' => 70,
             ],
             [
                 'name'   => 'Vodka',
-                'image'  => '',
+                'image'  => 'tequila-sunrise.jpg',
                 'volume' => 70,
             ],
             [
                 'name'   => 'Rhum blanc',
-                'image'  => '',
+                'image'  => 'tequila-sunrise.jpg',
                 'volume' => 70,
             ],
             [
                 'name'   => 'Rhum brun',
-                'image'  => '',
+                'image'  => 'tequila-sunrise.jpg',
                 'volume' => 70,
             ],
             [
                 'name'   => 'Tequila',
-                'image'  => '',
+                'image'  => 'tequila-sunrise.jpg',
                 'volume' => 70,
             ],
             [
                 'name'   => 'Triple sec',
-                'image'  => '',
+                'image'  => 'tequila-sunrise.jpg',
                 'volume' => 70,
             ],
             [
                 'name'   => 'Curaçao bleu',
-                'image'  => '',
+                'image'  => 'tequila-sunrise.jpg',
                 'volume' => 70,
             ],
             [
                 'name'   => 'Passoa',
-                'image'  => '',
+                'image'  => 'tequila-sunrise.jpg',
                 'volume' => 70,
             ],
             [
                 'name'   => 'Sucre de canne',
-                'image'  => '',
+                'image'  => 'tequila-sunrise.jpg',
                 'volume' => 70,
             ],
             [
                 'name'   => 'Sirop de citrons',
-                'image'  => '',
+                'image'  => 'tequila-sunrise.jpg',
                 'volume' => 75,
             ],
             [
                 'name'   => 'Sirop de grenadine',
-                'image'  => '',
+                'image'  => 'tequila-sunrise.jpg',
                 'volume' => 75,
             ],
             [
                 'name'   => 'Jus d\'oranges',
-                'image'  => '',
+                'image'  => 'tequila-sunrise.jpg',
                 'volume' => 100,
             ],
             [
                 'name'   => 'Jus de pommes',
-                'image'  => '',
+                'image'  => 'tequila-sunrise.jpg',
                 'volume' => 100,
             ],
             [
                 'name'   => 'Jus d\'ananas',
-                'image'  => '',
+                'image'  => 'tequila-sunrise.jpg',
                 'volume' => 100,
             ]
         ];
