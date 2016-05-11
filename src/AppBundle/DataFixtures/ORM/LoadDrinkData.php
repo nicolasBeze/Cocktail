@@ -45,72 +45,72 @@ class LoadDrinkData extends AbstractFixture implements OrderedFixtureInterface
         return [
             [
                 'name'   => 'Whisky',
-                'image'  => '',
+                'image'  => 'vodka-pomme.jpg',
                 'volume' => 70,
             ],
             [
                 'name'   => 'Vodka',
-                'image'  => '',
+                'image'  => 'vodka-pomme.jpg',
                 'volume' => 70,
             ],
             [
                 'name'   => 'Rhum blanc',
-                'image'  => '',
+                'image'  => 'vodka-pomme.jpg',
                 'volume' => 70,
             ],
             [
                 'name'   => 'Rhum brun',
-                'image'  => '',
+                'image'  => 'vodka-pomme.jpg',
                 'volume' => 70,
             ],
             [
                 'name'   => 'Tequila',
-                'image'  => '',
+                'image'  => 'vodka-pomme.jpg',
                 'volume' => 70,
             ],
             [
                 'name'   => 'Triple sec',
-                'image'  => '',
+                'image'  => 'vodka-pomme.jpg',
                 'volume' => 70,
             ],
             [
                 'name'   => 'Curaçao bleu',
-                'image'  => '',
+                'image'  => 'vodka-pomme.jpg',
                 'volume' => 70,
             ],
             [
                 'name'   => 'Passoa',
-                'image'  => '',
+                'image'  => 'vodka-pomme.jpg',
                 'volume' => 70,
             ],
             [
                 'name'   => 'Sucre de canne',
-                'image'  => '',
+                'image'  => 'vodka-pomme.jpg',
                 'volume' => 70,
             ],
             [
                 'name'   => 'Sirop de citrons',
-                'image'  => '',
+                'image'  => 'vodka-pomme.jpg',
                 'volume' => 75,
             ],
             [
                 'name'   => 'Sirop de grenadine',
-                'image'  => '',
+                'image'  => 'vodka-pomme.jpg',
                 'volume' => 75,
             ],
             [
                 'name'   => 'Jus d\'oranges',
-                'image'  => '',
+                'image'  => 'vodka-pomme.jpg',
                 'volume' => 100,
             ],
             [
                 'name'   => 'Jus de pommes',
-                'image'  => '',
+                'image'  => 'vodka-pomme.jpg',
                 'volume' => 100,
             ],
             [
                 'name'   => 'Jus d\'ananas',
-                'image'  => '',
+                'image'  => 'vodka-pomme.jpg',
                 'volume' => 100,
             ]
         ];

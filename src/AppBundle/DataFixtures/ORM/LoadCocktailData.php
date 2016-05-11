@@ -63,6 +63,87 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'Vodka3',
                     'Jus de pommes10'
                 ]
+            ],
+            [
+                'name'  => 'Vodka Pomme',
+                'description'   => '',
+                'image' => 'vodka-pomme.jpg',
+                'doses' => [
+                    'Vodka3',
+                    'Jus de pommes10'
+                ]
+            ],
+            [
+                'name'  => 'Vodka Pomme',
+                'description'   => '',
+                'image' => 'vodka-pomme.jpg',
+                'doses' => [
+                    'Vodka3',
+                    'Jus de pommes10'
+                ]
+            ],
+            [
+                'name'  => 'Vodka Pomme',
+                'description'   => '',
+                'image' => 'vodka-pomme.jpg',
+                'doses' => [
+                    'Vodka3',
+                    'Jus de pommes10'
+                ]
+            ],
+            [
+                'name'  => 'Vodka Pomme',
+                'description'   => '',
+                'image' => 'vodka-pomme.jpg',
+                'doses' => [
+                    'Vodka3',
+                    'Jus de pommes10'
+                ]
+            ],
+            [
+                'name'  => 'Vodka Pomme',
+                'description'   => '',
+                'image' => 'vodka-pomme.jpg',
+                'doses' => [
+                    'Vodka3',
+                    'Jus de pommes10'
+                ]
+            ],
+            [
+                'name'  => 'Vodka Pomme',
+                'description'   => '',
+                'image' => 'vodka-pomme.jpg',
+                'doses' => [
+                    'Vodka3',
+                    'Jus de pommes10'
+                ]
+            ],
+            [
+                'name'  => 'Vodka Pomme',
+                'description'   => '',
+                'image' => 'vodka-pomme.jpg',
+                'doses' => [
+                    'Vodka3',
+                    'Jus de pommes10'
+                ]
+            ],
+            [
+                'name'  => 'Vodka Pomme',
+                'description'   => '',
+                'image' => 'vodka-pomme.jpg',
+                'doses' => [
+                    'Vodka3',
+                    'Jus de pommes10'
+                ]
+            ],
+            [
+                'name'  => 'Vodka Pomme',
+                'description'   => '',
+                'image' => 'vodka-pomme.jpg',
+                'doses' => [
+                    'Vodka3',
+                    'Jus de pommes10'
+                ]
             ]
 
         ];
