@@ -40,13 +40,6 @@ class Drink {
     private $image;
 
     /**
-     * @ORM\Column(name="volume", type="integer")
-     * Volume to centiliter
-     * @var integer
-     */
-    private $volume;
-
-    /**
      * @return string
      */
     public function getName()
@@ -108,22 +101,6 @@ class Drink {
     public function setImage($image)
     {
         $this->image = $image;
-    }
-
-    /**
-     * @return int
-     */
-    public function getVolume()
-    {
-        return $this->volume;
-    }
-
-    /**
-     * @param int $volume
-     */
-    public function setVolume($volume)
-    {
-        $this->volume = $volume;
     }
 
 

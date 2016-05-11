@@ -1,27 +1,27 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    <section class="row">
     <h1>Cocktails:</h1>
-    <h2>Ajouter:</h2>
-    <div>
-        {{ form_start(form) }}
-        {{ form_widget(form) }}
-        {{ form_end(form) }}
+    <button id="buttonFormAdd" class="btn btn-info">Ajouter</button>
+    <div id="formAdd" class="novisible">
+        <div>
+            {{ form_start(form) }}
+            {{ form_widget(form) }}
+            {{ form_end(form) }}
+        </div>
     </div>
-    <h2>Liste:</h2>
-    <ul>
+    </section>
+    <section class="row">
         {% for cocktail in cocktails %}
-            <li>
-                <div >
-                    <h3>{{ cocktail.name }}</h3>
-                    <div class="image">
-                        <img src="{{ asset('bundles/app/images/'~cocktail.image.url) }}" alt="{{ cocktail.image.alt }}" />
-                    </div>
-                    <a href="{{ path('deleteCocktail', { 'id': cocktail.id }) }}">Supprimer</a>
+            <div class="col-xs-6 col-sm-4 col-md-3" >
+                <div class="name">{{ cocktail.name }}</div>
+                <div class="image">
+                    <img src="{{ asset('bundles/app/images/'~cocktail.image.url) }}" alt="{{ cocktail.image.alt }}" />
                 </div>
-            </li>
+                <a href="{{ path('deleteCocktail', { 'id': cocktail.id }) }}">Supprimer</a>
+            </div>
         {% endfor %}
-    </ul>
+    </section>
 {% endblock %}
-
 

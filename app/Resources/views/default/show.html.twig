@@ -1,18 +1,23 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="listCocktail">
-        <h2>{{ cocktail.name }}</h2>
-        {{ cocktail.description }}<br>
-        <div class="image">
-            <img src="{{ asset('bundles/app/images/'~cocktail.image.url) }}" alt="{{ cocktail.image.alt }}" />
+    <h1>{{ cocktail.name }}</h1>
+    <section class="row">
+        <div class="col-xs-6 col-sm-4 col-md-3 center">
+            {{ cocktail.description }}<br>
+            <div class="image">
+                <img src="{{ asset('bundles/app/images/'~cocktail.image.url) }}" alt="{{ cocktail.image.alt }}" />
+            </div>
+            <div class="infoListCocktail">
+                {% for dose in cocktail.doses %}
+                    <span class="pastille">{{ dose.drink.name }}</span> {{ dose.volume }} cl.<br>
+                {% endfor %}
+            </div>
+            {{ form_start(form, {'attr' : { 'class' : 'well'}}) }}
+            {{ form_widget(form.save, {'attr' : { 'class' : 'btn btn-primary'}}) }}
+            {{ form_end(form) }}
         </div>
-        <div class="infoListCocktail">
-            {% for dose in cocktail.doses %}
-                <span class="pastille">{{ dose.drink.name }}</span> {{ dose.volume }} cl.<br>
-            {% endfor %}
-        </div>
-    </div>
+    </section>
 {% endblock %}
 
 

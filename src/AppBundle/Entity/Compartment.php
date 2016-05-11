@@ -40,6 +40,13 @@ class Compartment {
     private $volume;
 
     /**
+     * @ORM\Column(name="remaining_volume", type="integer")
+     * Volume to centiliter
+     * @var integer
+     */
+    private $remainingVolume;
+
+    /**
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Drink")
      * @ORM\JoinColumn(nullable=false)
      * @var Drink
@@ -79,6 +86,22 @@ class Compartment {
     public function setVolume($volume)
     {
         $this->volume = $volume;
+    }
+
+    /**
+     * @return int
+     */
+    public function getRemainingVolume()
+    {
+        return $this->remainingVolume;
+    }
+
+    /**
+     * @param int $remainingVolume
+     */
+    public function setRemainingVolume($remainingVolume)
+    {
+        $this->remainingVolume = $remainingVolume;
     }
 
     /**
