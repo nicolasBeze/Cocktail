@@ -3,7 +3,7 @@
 {% block body %}
     <section class="row">
     {% for cocktail in cocktails %}
-        <div class="col-xs-4 col-sm-3 col-md-2 center">
+        <div class="col-xs-6 col-sm-3 col-md-2 center">
            <a class="name" href="{{ path('showCocktail', { 'id': cocktail.id }) }}">{{ cocktail.name }}</a>
             <div class="imageAndText">
                <a href="{{ path('showCocktail', { 'id': cocktail.id }) }}">
