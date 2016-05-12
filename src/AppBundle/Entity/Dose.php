@@ -41,6 +41,12 @@ class Dose {
     private $drink;
 
     /**
+     * @var integer
+     */
+    private $remainingVolume;
+    
+
+    /**
      * @return int
      */
     public function getId()
@@ -87,5 +93,23 @@ class Dose {
     {
         $this->drink = $drink;
     }
+
+    /**
+     * @return int
+     */
+    public function getRemainingVolume()
+    {
+        return $this->remainingVolume;
+    }
+
+    /**
+     * @param int $remainingVolume
+     */
+    public function setRemainingVolume($remainingVolume)
+    {
+        $this->remainingVolume = $remainingVolume;
+    }
+    
+    
 
 }

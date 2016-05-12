@@ -2363,14 +2363,16 @@ if (typeof jQuery === 'undefined') {
 }(jQuery);
 
 $(document).ready(function() {
-    
-    function formAdd() {
+
+    $( "#buttonFormAdd" ).click(function() {
+
         if($('#formAdd').css('display') == 'none'){
-            alert('ok');
+            $('#formAdd').css("display","block");
         }else{
-            alert('nop');
+            $('#formAdd').css("display","none");
         }
-    }
+    });
+
 });
 
 $(document).ready(function() {

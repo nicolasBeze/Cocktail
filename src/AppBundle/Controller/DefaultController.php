@@ -41,25 +41,35 @@ class DefaultController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
+        $compartmentRepository = $em->getRepository('AppBundle:Compartment');
         $cocktailRepository = $em->getRepository('AppBundle:Cocktail');
+
         /** @var Cocktail $cocktail */
         $cocktail = $cocktailRepository->find($id);
+
+        /** @var Dose $dose */
+        foreach($cocktail->getDoses() as $dose){
+            /** @var Compartment $compartment */
+            $compartment = $compartmentRepository->findOneBy(array('drink' => $dose->getDrink()));
+            if($dose->getVolume() > $compartment->getRemainingVolume()){
+                $dose->setRemainingVolume($compartment->getRemainingVolume());
+            }
+        }
 
         $form = $this->createForm(MakeType::class, $cocktail);
 
         if ($form->handleRequest($request)->isValid()) {
-            $compartmentRepository = $em->getRepository('AppBundle:Compartment');
+
             /** @var Dose $dose */
             foreach($cocktail->getDoses() as $dose){
                 /** @var Compartment $compartment */
-                $compartment = $compartmentRepository->findByDrink($dose->getDrink());
-                var_dump($compartment->first()->getRemainingVolume());die;
+                $compartment = $compartmentRepository->findOneBy(array('drink' => $dose->getDrink()));
                 $compartment->setRemainingVolume($compartment->getRemainingVolume() - $dose->getVolume());
                 $em->persist($compartment);
             }
             $em->flush();
             /** TODO enlever 1 cl raspberry */
-            return $this->redirectToRoute('showReserve', array('id' => $id));
+            return $this->redirectToRoute('showCocktail', array('id' => $id));
         }
 
         return $this->render('default/show.html.twig', [

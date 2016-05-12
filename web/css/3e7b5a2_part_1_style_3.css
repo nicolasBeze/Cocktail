@@ -1,4 +1,4 @@
-body { background-color:#DDD; }
+
 [class*="col"] { margin-bottom: 20px; }
 img { width: 100%; }
 
@@ -25,4 +25,45 @@ img { width: 100%; }
     background: white;
     cursor: inherit;
     display: block;
+}
+
+.novisible {
+    display: none;
+}
+
+.imageAndText {}
+
+.infoListCocktail:hover {
+    opacity: 0.7;
+}
+
+.infoListCocktail {
+    background-color: black;
+    opacity: 0.5;
+    height: 100px;
+    margin-top: -100px;
+    color: white;
+}
+
+.pastille {
+    margin: 10px;
+    white-space:nowrap;
+    display: inline;
+    overflow: hidden;
+}
+
+.name {
+    color: #9d9d9d;
+    font-size: 20px;
+    white-space:nowrap;
+    display: inline;
+    overflow: hidden;
+}
+
+.center {
+    text-align: center;
+}
+
+.left {
+    text-align: left;
 }
