@@ -5,8 +5,19 @@
     <section class="row">
         <div class="col-xs-6 col-sm-4 col-md-3">
             {{ compartment.remainingVolume }}cl restant sur {{ compartment.volume }}cl<br>
-            <div class="image">
-                <img src="{{ asset('bundles/app/images/'~compartment.drink.image.url) }}" alt="{{ compartment.drink.image.alt }}" />
+            {% set percent = ((compartment.remainingVolume / compartment.volume)*100) |round %}
+
+            {% set color = '#0bfe08' %}
+            {% if percent <= 15 %}
+                {% set color = '#fe3320' %}
+            {% endif %}
+            {% if percent < 30 %}
+                {% set color = '#fe9820' %}
+            {% endif %}
+
+            <div class="blockCompartment">
+                <img class="imgCompartment" src="{{ asset('bundles/app/images/bouteille.png') }}" />
+                <div class ="percentDrink" style="background-color:{{ color }}; height:{{ percent }}%;"></div>
             </div>
         </div>
         <div class="col-xs-6 col-sm-4 col-md-3">

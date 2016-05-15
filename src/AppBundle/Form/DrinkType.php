@@ -2,6 +2,7 @@
 
 namespace AppBundle\Form;
 
+use AppBundle\Entity\Drink;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -18,6 +19,13 @@ class DrinkType extends AbstractType
     {
         $builder
             ->add('name')
+            ->add('viscosity', ChoiceType::class, array(
+                'choices'  => [
+                    Drink::VISCOSITY_ALCOOL => Drink::VISCOSITY_ALCOOL,
+                    Drink::VISCOSITY_JUICE => Drink::VISCOSITY_JUICE,
+                    Drink::VISCOSITY_SIROP => Drink::VISCOSITY_SIROP
+                ]
+            ))
             ->add('image', ImageType::class)
             ->add('save', SubmitType::class, array('label' => 'Créer'))
         ;

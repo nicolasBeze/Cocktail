@@ -18,6 +18,10 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Drink {
 
+    const VISCOSITY_ALCOOL = 100;
+    const VISCOSITY_JUICE = 120;
+    const VISCOSITY_SIROP = 200;
+
     /**
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -38,6 +42,12 @@ class Drink {
      * @var Image
      */
     private $image;
+
+    /**
+     * @ORM\Column(name="viscosity", type="integer")
+     * @var integer
+     */
+    private $viscosity;
 
     /**
      * @return string
@@ -101,6 +111,22 @@ class Drink {
     public function setImage($image)
     {
         $this->image = $image;
+    }
+
+    /**
+     * @return int
+     */
+    public function getViscosity()
+    {
+        return $this->viscosity;
+    }
+
+    /**
+     * @param int $viscosity
+     */
+    public function setViscosity($viscosity)
+    {
+        $this->viscosity = $viscosity;
     }
 
 

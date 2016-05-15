@@ -4,6 +4,7 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Cocktail;
 use AppBundle\Entity\Compartment;
+use AppBundle\Entity\Consumption;
 use AppBundle\Entity\Dose;
 use AppBundle\Entity\Drink;
 use AppBundle\Form\AjustmentType;
@@ -59,6 +60,10 @@ class DefaultController extends Controller
         $form = $this->createForm(MakeType::class, $cocktail);
 
         if ($form->handleRequest($request)->isValid()) {
+
+            $consumption = new Consumption();
+            $consumption->setCocktail($cocktail);
+            $em->persist($consumption);
 
             /** @var Dose $dose */
             foreach($cocktail->getDoses() as $dose){
@@ -224,5 +229,34 @@ class DefaultController extends Controller
         $em->flush();
 
         return $this->redirectToRoute('cocktail');
+    }
+
+    /**
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     * @Route("/consommation", name="consumption")
+     */
+    public function consumptionAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $consumptionRepository = $em->getRepository('AppBundle:Consumption');
+        /** @var Consumption $consumptions */
+        $consumptions = $consumptionRepository->findAll();
+
+        $statisticCocktail = [];
+        /** @var Consumption $consumption */
+        foreach($consumptions as $consumption){
+
+            if(!empty($statisticCocktail[$consumption->getCocktail()->getId()])){
+                $statisticCocktail[$consumption->getCocktail()->getId()] += 1;
+            }else{
+                $statisticCocktail[$consumption->getCocktail()->getId()] = 1;
+            }
+        }
+
+        return $this->render('default/consumption.html.twig', [
+            'consumptions' => $consumptions,
+            'statisticCocktail' => $statisticCocktail
+        ]);
     }
 }
