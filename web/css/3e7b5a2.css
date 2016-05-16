@@ -7420,3 +7420,22 @@ img { width: 100%; }
 .barre {
     text-decoration: line-through;
 }
+
+.blockCompartment {
+    position:relative;
+    height:185px;
+    width: 48px;
+    margin: auto;
+}
+
+.imgCompartment {
+    position:relative;
+    z-index: 10;
+}
+
+.percentDrink {
+    position:absolute;
+    bottom: 0px;
+    width:46px;
+    z-index: 1;
+}

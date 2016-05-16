@@ -16,7 +16,7 @@
                 {% endif %}
 
 
-                <a href="{{ path('showReserve', { 'id': compartment.id }) }}">
+                <a href="{{ path('showCompartment', { 'id': compartment.id }) }}">
                     <span style="color:{{ color }}">{{ compartment.libelle }} :<br>
                     {{ compartment.drink.name }}<br></span>
                 </a>

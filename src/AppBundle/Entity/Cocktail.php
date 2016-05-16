@@ -14,7 +14,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 /**
  * Class Cocktail
  * @ORM\Table()
- * @ORM\Entity()
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\CocktailRepository")
  * @package AppBundle\Entity
  */
 class Cocktail
@@ -141,7 +141,7 @@ class Cocktail
     }
 
     /**
-     * @return ArrayCollection
+     * @return ArrayCollection Dose
      */
     public function getDoses()
     {
