@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Class Compartment
  * @ORM\Table()
- * @ORM\Entity(repositoryClass="AppBundle\Repository\CompartmentRepositoryRepository")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\CompartmentRepository")
  * @package AppBundle\Entity
  */
 class Compartment {

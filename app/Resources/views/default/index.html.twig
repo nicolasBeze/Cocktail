@@ -6,7 +6,7 @@
         <div class="col-xs-6 col-sm-3 col-md-2 center">
            <a class="name" href="{{ path('showCocktail', { 'id': cocktail.id }) }}">{{ cocktail.name }}</a>
             <div class="imageAndText">
-               <a href="{{ path('showCocktail', { 'id': cocktail.id }) }}">
+               <a href="{{ path('showCocktail', { 'cocktail': cocktail.id }) }}">
                    <div class="image">
                        <img src="{{ asset('bundles/app/images/'~cocktail.image.url) }}" alt="{{ cocktail.image.alt }}" />
                    </div>

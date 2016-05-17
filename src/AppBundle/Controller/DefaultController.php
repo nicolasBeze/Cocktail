@@ -2,7 +2,8 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\Consumption;
+use AppBundle\Entity\Cocktail;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use AppBundle\Form\MakeType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -28,40 +29,20 @@ class DefaultController extends Controller
 
     /**
      * @return \Symfony\Component\HttpFoundation\Response
-     * @Route("/cocktail/{id}", name="showCocktail", requirements={"id" = "\d+"})
+     * @Route("/cocktail/{cocktail}", name="showCocktail", requirements={"id" = "\d+"})
+     * @ParamConverter("cocktail")
      */
-    public function showAction($id, Request $request)
+    public function showAction(Cocktail $cocktail, Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
-
-        $compartmentRepository = $em->getRepository('AppBundle:Compartment');
-        $cocktailRepository = $em->getRepository('AppBundle:Cocktail');
-        $cocktail = $cocktailRepository->find($id);
-
-        foreach($cocktail->getDoses() as $dose){
-            $compartment = $compartmentRepository->findOneBy(array('drink' => $dose->getDrink()));
-            if($dose->getVolume() > $compartment->getRemainingVolume()){
-                $dose->setRemainingVolume($compartment->getRemainingVolume());
-            }
-        }
+        $cocktail = $this->get('cocktail_handler')->remainingVolume($cocktail);
 
         $form = $this->createForm(MakeType::class, $cocktail);
 
         if ($form->handleRequest($request)->isValid()) {
 
-            $consumption = new Consumption();
-            $consumption->setCocktail($cocktail);
-            $em->persist($consumption);
-
-            foreach($cocktail->getDoses() as $dose){
-                $compartment = $compartmentRepository->findOneBy(array('drink' => $dose->getDrink()));
-                $compartment->setRemainingVolume($compartment->getRemainingVolume() - $dose->getVolume());
-                $em->persist($compartment);
-
-            }
-            $em->flush();
-            /** TODO enlever 1 cl raspberry */
-            return $this->redirectToRoute('showCocktail', array('id' => $id));
+            $this->get('cocktail_handler')->addConsumption($cocktail);
+            $this->get('cocktail_handler')->updateCompartment($cocktail);
+            return $this->redirectToRoute('showCocktail', array('cocktail' => $cocktail->getId()));
         }
 
         return $this->render('default/show.html.twig', [
