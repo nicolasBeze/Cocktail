@@ -32,22 +32,12 @@ class DefaultController extends Controller
      * @Route("/cocktail/{cocktail}", name="showCocktail", requirements={"id" = "\d+"})
      * @ParamConverter("cocktail")
      */
-    public function showAction(Cocktail $cocktail, Request $request)
+    public function showAction(Cocktail $cocktail)
     {
         $cocktail = $this->get('cocktail_handler')->remainingVolume($cocktail);
 
-        $form = $this->createForm(MakeType::class, $cocktail);
-
-        if ($form->handleRequest($request)->isValid()) {
-
-            $this->get('cocktail_handler')->addConsumption($cocktail);
-            $this->get('cocktail_handler')->updateCompartment($cocktail);
-            return $this->redirectToRoute('showCocktail', array('cocktail' => $cocktail->getId()));
-        }
-
         return $this->render('default/show.html.twig', [
-            'cocktail' => $cocktail,
-            'form' => $form->createView()
+            'cocktail' => $cocktail
         ]);
     }
 }

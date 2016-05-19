@@ -148,7 +148,15 @@ class Cocktail
         return $this->doses;
     }
 
-
-
-
+    /**
+     * @return int
+     */
+    public function getCocktailTime()
+    {
+        $time = 0;
+        foreach ($this->getDoses() as $dose){
+            $time += $dose->getVolume() * $dose->getDrink()->getViscosity();
+        }
+        return $time;
+    }
 }

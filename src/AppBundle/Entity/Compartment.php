@@ -53,7 +53,11 @@ class Compartment {
      */
     private $drink;
 
-
+    /**
+     * @ORM\Column(name="pin_gpio", type="integer")
+     * @var integer
+     */
+    private $pinGpio;
 
 
     /**
@@ -134,6 +138,22 @@ class Compartment {
     public function setLibelle($libelle)
     {
         $this->libelle = $libelle;
+    }
+
+    /**
+     * @return int
+     */
+    public function getPinGpio()
+    {
+        return $this->pinGpio;
+    }
+
+    /**
+     * @param int $pinGpio
+     */
+    public function setPinGpio($pinGpio)
+    {
+        $this->pinGpio = $pinGpio;
     }
 
 }

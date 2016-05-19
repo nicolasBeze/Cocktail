@@ -11,6 +11,7 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Cocktail;
 use AppBundle\Form\CocktailType;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -60,5 +61,16 @@ class CocktailController extends Controller
         $em->flush();
 
         return $this->redirectToRoute('cocktail');
+    }
+
+    /**
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     * @Route("/make/cocktail/{cocktail}", name="makeCocktail", requirements={"id" = "\d+"})
+     * @ParamConverter("cocktail")
+     */
+    public function makeCocktailAction(Cocktail $cocktail)
+    {
+        $this->get('cocktail_handler')->addConsumption($cocktail);
+        return $this->get('cocktail_handler')->updateCompartment($cocktail);
     }
 }

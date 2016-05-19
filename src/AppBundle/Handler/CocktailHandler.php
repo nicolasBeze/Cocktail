@@ -3,7 +3,9 @@
 namespace AppBundle\Handler;
 
 use AppBundle\Entity\Cocktail;
+use AppBundle\Entity\Compartment;
 use AppBundle\Entity\Consumption;
+use AppBundle\Entity\Dose;
 use Doctrine\ORM\EntityManager;
 
 /**
@@ -42,11 +44,11 @@ class CocktailHandler
         foreach($cocktail->getDoses() as $dose){
             $compartment = $this->compartmentRepository->findOneBy(array('drink' => $dose->getDrink()));
             $compartment->setRemainingVolume($compartment->getRemainingVolume() - $dose->getVolume());
-            $this->serveDose($dose);
+            $this->serveDose($compartment->getPinGpio(), $dose);
             $this->em->persist($compartment);
-
+            $this->em->flush();
         }
-        $this->em->flush();
+        return true;
     }
 
     public function addConsumption(Cocktail $cocktail){
@@ -56,7 +58,11 @@ class CocktailHandler
         $this->em->persist($consumption);
     }
 
-    public function serveDose(Dose $dose){
-        /** todo: servir une dose via raspberry */
+    public function serveDose($pinGpio, Dose $dose){
+
+        $time = $dose->getVolume() * $dose->getDrink()->getViscosity();
+        exec(sprintf("gpio write %d 1", $pinGpio));
+        sleep($time);
+        exec(sprintf("gpio write %d 0", $pinGpio));
     }
 }

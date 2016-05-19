@@ -18,9 +18,9 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Drink {
 
-    const VISCOSITY_ALCOOL = 100;
-    const VISCOSITY_JUICE = 120;
-    const VISCOSITY_SIROP = 200;
+    const VISCOSITY_ALCOOL = 1;
+    const VISCOSITY_JUICE = 1.2;
+    const VISCOSITY_SIROP = 2;
 
     /**
      * @ORM\Column(name="id", type="integer")

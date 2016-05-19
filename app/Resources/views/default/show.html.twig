@@ -5,6 +5,7 @@
     <section class="row">
         <div class="col-xs-6 col-sm-4 col-md-3 center">
             {{ cocktail.description }}<br>
+            {{ cocktail.cocktailTime }}
             <div class="image">
                 <img src="{{ asset('bundles/app/images/'~cocktail.image.url) }}" alt="{{ cocktail.image.alt }}" />
             </div>
@@ -18,9 +19,10 @@
                     {% endif %}
                 {% endfor %}
             </div>
-            {{ form_start(form, {'attr' : { 'class' : 'well'}}) }}
-            {{ form_widget(form.save, {'attr' : { 'class' : 'btn btn-primary'}}) }}
-            {{ form_end(form) }}
+            <div class="well">
+                <input type="hidden" value="{{ cocktail.id }}" id="idCocktail">
+                <input type="button" class="btn btn-primary" value="Servir" id="makeCocktail">
+            </div>
         </div>
     </section>
 {% endblock %}
