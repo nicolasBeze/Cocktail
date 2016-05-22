@@ -15,6 +15,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class CocktailController extends Controller
 {
@@ -70,7 +71,11 @@ class CocktailController extends Controller
      */
     public function makeCocktailAction(Cocktail $cocktail)
     {
+        /** todo si cocktail en cour, on envoie bouler */
+        /** todo crer un fichier de bloquage */
         $this->get('cocktail_handler')->addConsumption($cocktail);
-        return $this->get('cocktail_handler')->updateCompartment($cocktail);
+        $this->get('cocktail_handler')->updateCompartment($cocktail);
+        /** todo supprimer fichier de bloquage */
+        return new Response();
     }
 }

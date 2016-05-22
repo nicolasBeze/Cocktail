@@ -10,12 +10,12 @@ $(document).ready(function() {
     });
 
     $( "#makeCocktail" ).click(function() {
+        id = $('#idCocktail').val();
         $.ajax({
-            url: Routing.generate('makeCocktail', "cocktail="+$('#idCocktail').val()),
-            type: 'GET',
-            data: "cocktail="+$('#idCocktail').val(),
-            success: function (data) {
-                alert('ok');
+            url: Routing.generate('makeCocktail', {cocktail: id}),
+            type: 'POST',
+            success: function () {
+                alert('cocktail terminée');
             }
         })
     });

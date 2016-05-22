@@ -23,7 +23,7 @@ class LoadCompartmentData extends AbstractFixture implements OrderedFixtureInter
             $compartment->setDrink($this->getReference($data['drink']));
             $compartment->setlibelle($data['libelle']);
             $compartment->setVolume($data['volume']);
-            $compartment->setPinGpio(1);
+            $compartment->setPinGpio(7);
             $compartment->setRemainingVolume($data['remainingVolume']);
             $manager->persist($compartment);
         }

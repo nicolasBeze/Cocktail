@@ -2373,6 +2373,16 @@ $(document).ready(function() {
         }
     });
 
+    $( "#makeCocktail" ).click(function() {
+        $.ajax({
+            url: Routing.generate('makeCocktail', "cocktail="+$('#idCocktail').val()),
+            type: 'GET',
+            data: "cocktail="+$('#idCocktail').val(),
+            success: function (data) {
+                alert('ok');
+            }
+        })
+    });
 });
 
 $(document).ready(function() {

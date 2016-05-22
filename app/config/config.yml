@@ -72,3 +72,6 @@ assetic:
     use_controller: '%kernel.debug%'
     filters:
         cssrewrite: ~
+
+fos_js_routing:
+    routes_to_expose: [ makeCocktail ]

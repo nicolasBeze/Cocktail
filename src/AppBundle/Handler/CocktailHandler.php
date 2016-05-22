@@ -48,7 +48,6 @@ class CocktailHandler
             $this->em->persist($compartment);
             $this->em->flush();
         }
-        return true;
     }
 
     public function addConsumption(Cocktail $cocktail){
@@ -61,8 +60,8 @@ class CocktailHandler
     public function serveDose($pinGpio, Dose $dose){
 
         $time = $dose->getVolume() * $dose->getDrink()->getViscosity();
-        exec(sprintf("gpio write %d 1", $pinGpio));
+        exec(sprintf("gpio mode %d out", $pinGpio));
         sleep($time);
-        exec(sprintf("gpio write %d 0", $pinGpio));
+        exec(sprintf("gpio mode %d in", $pinGpio));
     }
 }
