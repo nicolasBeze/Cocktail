@@ -8,3 +8,5 @@ services:
         class: AppBundle\Handler\CocktailHandler
         arguments:
             - "@doctrine.orm.entity_manager"
+    secure_handler:
+            class: AppBundle\Handler\SecureHandler

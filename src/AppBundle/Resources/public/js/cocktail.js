@@ -13,18 +13,27 @@ $(document).ready(function() {
     });
 
     $( "#makeCocktail" ).click(function() {
-        dcpt = 22;
-        $('#compte_a_rebours').css("display", "block");
+        dcpt = $('#time').val();
+
+        $('#compte_a_rebours').css("display", "block").css("background-color","#204d74");
         timer = setInterval(function(){ decompte() }, 1000);
+
         id = $('#idCocktail').val();
         $.ajax({
             url: Routing.generate('makeCocktail', {cocktail: id}),
             type: 'POST',
-            success: function () {
-                alert('cocktail terminée');
+            success: function (data) {
+                if(data == "erreur"){
+                    clearInterval(timer);
+                    $('#compte_a_rebours').css("background-color","#741a17").html('Fait la queue, soiffard!');
+                    $("#compte_a_rebours").delay(4000).fadeOut(500);
+                }else{
+                    $('#compte_a_rebours').css("background-color","#4cae4c").html('Cocktail terminé!');
+                    $("#compte_a_rebours").delay(4000).fadeOut(500);
+                }
             }
         });
-        $('#compte_a_rebours').css("display", "none");
+
     });
     
 
@@ -40,7 +49,7 @@ $(document).ready(function() {
         }
         $("#compte_a_rebours").html(affiche);
         dcpt -= 1;
-        if (dcpt < 0) {
+        if (dcpt < 1) {
             clearInterval(timer);
         }
 

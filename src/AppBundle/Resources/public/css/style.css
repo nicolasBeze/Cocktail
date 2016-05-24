@@ -91,9 +91,15 @@ img { width: 100%; }
     z-index: 1;
 }
 
-#compteARebours {
+#compte_a_rebours {
     display: none;
     padding: 20px;
     background-color: #204d74;
+    color: white;
+}
+
+.impossible{
+    padding: 20px;
+    background-color: #ac2925;
     color: white;
 }

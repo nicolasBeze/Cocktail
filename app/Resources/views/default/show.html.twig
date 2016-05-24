@@ -1,17 +1,19 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+    {% set validateCocktail = 1 %}
     <h1>{{ cocktail.name }}</h1>
     <section class="row">
         <div class="col-xs-6 col-sm-4 col-md-3 center">
+
             {{ cocktail.description }}<br>
-            {{ cocktail.cocktailTime }}
             <div class="image">
                 <img src="{{ asset('bundles/app/images/'~cocktail.image.url) }}" alt="{{ cocktail.image.alt }}" />
             </div>
             <div class="infoListCocktail">
                 {% for dose in cocktail.doses %}
                     {% if dose.remainingVolume is not null %}
+                        {% set validateCocktail = 0 %}
                         <span class="pastille barre"><span class="pastille">{{ dose.drink.name }}</span> {{ dose.volume }} cl.<br></span>
                         <span class="pastille alert-warning"><span class="pastille">{{ dose.drink.name }}</span> {{ dose.remainingVolume }} cl.<br></span>
                     {% else %}
@@ -19,13 +21,20 @@
                     {% endif %}
                 {% endfor %}
             </div>
-            <div class="well">
-                <input type="hidden" value="{{ cocktail.id }}" id="idCocktail">
-                <input type="button" class="btn btn-primary" value="Servir" id="makeCocktail">
-            </div>
+            {% if validateCocktail == 0 %}
+                <div class="impossible">
+                    Impossible de servir le cocktail...
+                </div>
+            {%  else %}
+                <div class="well">
+                    <input type="hidden" id="idCocktail" value="{{ cocktail.id }}">
+                    <input type="hidden" id="time" value="{{ cocktail.cocktailTime }}">
+                    <input type="button" class="btn btn-primary" value="Servir" id="makeCocktail">
+                </div>
+            {% endif %}
         </div>
         <div class="col-xs-6 col-sm-4 col-md-3 center">
-            <div id="compte_a_rebours" >a</div>
+            <div id="compte_a_rebours" >Cocktail en préparation...</div>
         </div>
     </section>
 {% endblock %}

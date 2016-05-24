@@ -71,11 +71,13 @@ class CocktailController extends Controller
      */
     public function makeCocktailAction(Cocktail $cocktail)
     {
-        /** todo si cocktail en cour, on envoie bouler */
-        /** todo crer un fichier de bloquage */
+        if(!$this->get('secure_handler')->checkAndCreateSecurity()){
+            return new Response('erreur');
+        }
         $this->get('cocktail_handler')->addConsumption($cocktail);
         $this->get('cocktail_handler')->updateCompartment($cocktail);
-        /** todo supprimer fichier de bloquage */
+        $this->get('secure_handler')->deletedSecurity();
+
         return new Response();
     }
 }
