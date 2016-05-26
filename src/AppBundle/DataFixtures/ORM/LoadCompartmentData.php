@@ -23,7 +23,7 @@ class LoadCompartmentData extends AbstractFixture implements OrderedFixtureInter
             $compartment->setDrink($this->getReference($data['drink']));
             $compartment->setlibelle($data['libelle']);
             $compartment->setVolume($data['volume']);
-            $compartment->setPinGpio(7);
+            $compartment->setPinGpio($data['pin']);
             $compartment->setRemainingVolume($data['remainingVolume']);
             $manager->persist($compartment);
         }
@@ -44,84 +44,98 @@ class LoadCompartmentData extends AbstractFixture implements OrderedFixtureInter
                 'libelle'  => 'Compartiment 1',
                 'remainingVolume' => 60,
                 'volume' => 70,
+                'pin' => 0,
             ],
             [
                 'drink'   => 'Vodka',
                 'libelle'  => 'Compartiment 2',
                 'remainingVolume' => 50,
                 'volume' => 70,
+                'pin' => 8,
             ],
             [
                 'drink'   => 'Rhum blanc',
                 'libelle'  => 'Compartiment 3',
                 'remainingVolume' => 36,
                 'volume' => 70,
+                'pin' => 1,
             ],
             [
                 'drink'   => 'Rhum brun',
                 'libelle'  => 'Compartiment 4',
                 'remainingVolume' => 12,
                 'volume' => 70,
+                'pin' => 2,
             ],
             [
                 'drink'   => 'Tequila',
                 'libelle'  => 'Compartiment 5',
                 'remainingVolume' => 8,
                 'volume' => 70,
+                'pin' => 4,
             ],
             [
                 'drink'   => 'Triple sec',
                 'libelle'  => 'Compartiment 6',
                 'remainingVolume' => 0,
                 'volume' => 70,
+                'pin' => 5,
             ],
             [
                 'drink'   => 'Curaçao bleu',
                 'libelle'  => 'Compartiment 7',
                 'remainingVolume' => 24,
                 'volume' => 70,
+                'pin' => 6,
             ],
             [
                 'drink'   => 'Passoa',
                 'libelle'  => 'Compartiment 8',
                 'remainingVolume' => 70,
                 'volume' => 70,
+                'pin' => 7,
             ],
             [
                 'drink'   => 'Sucre de canne',
                 'libelle'  => 'Compartiment 9',
                 'remainingVolume' => 18,
                 'volume' => 70,
+                'pin' => 9,
             ],
             [
                 'drink'   => 'Sirop de citrons',
                 'libelle'  => 'Compartiment 10',
                 'remainingVolume' => 75,
                 'volume' => 75,
+                'pin' => 10,
             ],
             [
                 'drink'   => 'Sirop de grenadine',
                 'libelle'  => 'Compartiment 11',
                 'remainingVolume' => 75,
                 'volume' => 75,
+                'pin' => 12,
             ],
             [
                 'drink'   => 'Jus d\'oranges',
                 'libelle'  => 'Compartiment 12',
                 'remainingVolume' => 10,
                 'volume' => 100,
+                'pin' => 13,
             ],
             [
                 'drink'   => 'Jus de pommes',
                 'libelle'  => 'Compartiment 13',
                 'remainingVolume' => 20,
                 'volume' => 100,
+                'pin' => 14,
             ],
             [
                 'drink'   => 'Jus d\'ananas',
                 'libelle'  => 'Compartiment 14',
                 'remainingVolume' => 30,
                 'volume' => 100,
+                'pin' => 15,
             ]
         ];
     }
