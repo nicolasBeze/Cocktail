@@ -20,7 +20,7 @@ class Drink {
 
     const VISCOSITY_ALCOOL = 1;
     const VISCOSITY_JUICE = 1.2;
-    const VISCOSITY_SIROP = 2;
+    const VISCOSITY_SIROP = 2.3;
 
     /**
      * @ORM\Column(name="id", type="integer")

@@ -58,7 +58,7 @@ class LoadCompartmentData extends AbstractFixture implements OrderedFixtureInter
                 'libelle'  => 'Compartiment 3',
                 'remainingVolume' => 36,
                 'volume' => 70,
-                'pin' => 1,
+                'pin' => 3,
             ],
             [
                 'drink'   => 'Rhum brun',
@@ -72,7 +72,7 @@ class LoadCompartmentData extends AbstractFixture implements OrderedFixtureInter
                 'libelle'  => 'Compartiment 5',
                 'remainingVolume' => 8,
                 'volume' => 70,
-                'pin' => 4,
+                'pin' => 11,
             ],
             [
                 'drink'   => 'Triple sec',
@@ -114,14 +114,14 @@ class LoadCompartmentData extends AbstractFixture implements OrderedFixtureInter
                 'libelle'  => 'Compartiment 11',
                 'remainingVolume' => 75,
                 'volume' => 75,
-                'pin' => 12,
+                'pin' => 1,
             ],
             [
                 'drink'   => 'Jus d\'oranges',
                 'libelle'  => 'Compartiment 12',
                 'remainingVolume' => 10,
                 'volume' => 100,
-                'pin' => 13,
+                'pin' => 12,
             ],
             [
                 'drink'   => 'Jus de pommes',
