@@ -38,18 +38,6 @@ class LoadDoseData extends AbstractFixture implements OrderedFixtureInterface
     {
         return [
             [
-                'drink'   => 'Whisky',
-                'volume' => 2,
-            ],
-            [
-                'drink'   => 'Whisky',
-                'volume' => 4,
-            ],
-            [
-                'drink'   => 'Whisky',
-                'volume' => 6,
-            ],
-            [
                 'drink'   => 'Vodka',
                 'volume' => 2,
             ],
@@ -118,10 +106,6 @@ class LoadDoseData extends AbstractFixture implements OrderedFixtureInterface
                 'volume' => 12,
             ],
             [
-                'drink'   => 'Passoa',
-                'volume' => 8,
-            ],
-            [
                 'drink'   => 'Sucre de canne',
                 'volume' => 3,
             ],
@@ -155,18 +139,6 @@ class LoadDoseData extends AbstractFixture implements OrderedFixtureInterface
             ],
             [
                 'drink'   => 'Jus de pommes',
-                'volume' => 10,
-            ],
-            [
-                'drink'   => 'Jus de pommes',
-                'volume' => 12,
-            ],
-            [
-                'drink'   => 'Jus de pommes',
-                'volume' => 15,
-            ],
-            [
-                'drink'   => 'Jus d\'ananas',
                 'volume' => 10,
             ],
             [
