@@ -44,73 +44,83 @@ class LoadDrinkData extends AbstractFixture implements OrderedFixtureInterface
     {
         return [
             [
-                'name'   => 'Whisky',
-                'image'  => 'vodka-pomme.jpg',
+                'name'   => 'Martini',
+                'image'  => 'martini.jpg',
                 'viscosity' => Drink::VISCOSITY_ALCOOL,
             ],
             [
                 'name'   => 'Vodka',
-                'image'  => 'vodka-pomme.jpg',
+                'image'  => 'vodka.jpg',
                 'viscosity' => Drink::VISCOSITY_ALCOOL,
             ],
             [
                 'name'   => 'Rhum blanc',
-                'image'  => 'vodka-pomme.jpg',
+                'image'  => 'rhumblanc.jpg',
                 'viscosity' => Drink::VISCOSITY_ALCOOL,
             ],
             [
                 'name'   => 'Rhum brun',
-                'image'  => 'vodka-pomme.jpg',
+                'image'  => 'rhumbrun.jpg',
                 'viscosity' => Drink::VISCOSITY_ALCOOL,
             ],
             [
                 'name'   => 'Tequila',
-                'image'  => 'vodka-pomme.jpg',
+                'image'  => 'tequila.png',
                 'viscosity' => Drink::VISCOSITY_ALCOOL,
             ],
             [
                 'name'   => 'Triple sec',
-                'image'  => 'vodka-pomme.jpg',
+                'image'  => 'triplesec.jpg',
                 'viscosity' => Drink::VISCOSITY_ALCOOL,
             ],
             [
                 'name'   => 'Curaçao bleu',
-                'image'  => 'vodka-pomme.jpg',
+                'image'  => 'curacao.jpg',
                 'viscosity' => Drink::VISCOSITY_ALCOOL,
             ],
             [
-                'name'   => 'Passoa',
-                'image'  => 'vodka-pomme.jpg',
+                'name'   => 'Cognac',
+                'image'  => 'cognac.jpg',
                 'viscosity' => Drink::VISCOSITY_ALCOOL,
             ],
             [
                 'name'   => 'Sucre de canne',
-                'image'  => 'vodka-pomme.jpg',
+                'image'  => 'sucre-de-canne.jpg',
                 'viscosity' => Drink::VISCOSITY_SIROP,
             ],
             [
                 'name'   => 'Sirop de citrons',
-                'image'  => 'vodka-pomme.jpg',
+                'image'  => 'sirop-de-citron.jpg',
                 'viscosity' => Drink::VISCOSITY_SIROP,
             ],
             [
                 'name'   => 'Sirop de grenadine',
-                'image'  => 'vodka-pomme.jpg',
+                'image'  => 'sirop-de-grenadine.jpg',
                 'viscosity' => Drink::VISCOSITY_SIROP,
             ],
             [
                 'name'   => 'Jus d\'oranges',
-                'image'  => 'vodka-pomme.jpg',
+                'image'  => 'oranges.jpg',
                 'viscosity' => Drink::VISCOSITY_JUICE,
             ],
             [
-                'name'   => 'Jus de pommes',
-                'image'  => 'vodka-pomme.jpg',
+                'name'   => 'Jus de cranberry',
+                'image'  => 'cranberry.jpg',
                 'viscosity' => Drink::VISCOSITY_JUICE,
             ],
             [
                 'name'   => 'Jus d\'ananas',
-                'image'  => 'vodka-pomme.jpg',
+                'image'  => 'ananas.jpg',
+                'viscosity' => Drink::VISCOSITY_JUICE,
+            ],
+            [
+                'name'   => 'Eau gazeuse',
+                'image'  => 'perrier.jpg',
+                'viscosity' => Drink::VISCOSITY_JUICE,
+            ],
+            [
+                'name'   => 'Chambord',
+                'image'  => 'chambord.jpg',
                 'viscosity' => Drink::VISCOSITY_JUICE,
             ]
         ];
