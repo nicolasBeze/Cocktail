@@ -107,7 +107,7 @@ class LoadCompartmentData extends AbstractFixture implements OrderedFixtureInter
                 'libelle'  => 'Compartiment 10',
                 'remainingVolume' => 60,
                 'volume' => 70,
-                'pin' => 10,
+                'pin' => 11,
             ],
             [
                 'drink'   => 'Sirop de grenadine',
@@ -121,7 +121,7 @@ class LoadCompartmentData extends AbstractFixture implements OrderedFixtureInter
                 'libelle'  => 'Compartiment 12',
                 'remainingVolume' => 90,
                 'volume' => 100,
-                'pin' => 12,
+                'pin' => 5,
             ],
             [
                 'drink'   => 'Jus de cranberry',
