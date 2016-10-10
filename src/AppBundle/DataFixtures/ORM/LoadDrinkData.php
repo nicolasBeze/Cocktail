@@ -74,7 +74,7 @@ class LoadDrinkData extends AbstractFixture implements OrderedFixtureInterface
                 'viscosity' => Drink::VISCOSITY_ALCOOL,
             ],
             [
-                'name'   => 'Curaçao bleu',
+                'name'   => 'Curaçao',
                 'image'  => 'curacao.jpg',
                 'viscosity' => Drink::VISCOSITY_ALCOOL,
             ],
