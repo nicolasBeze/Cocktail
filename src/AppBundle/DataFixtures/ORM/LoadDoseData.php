@@ -138,10 +138,6 @@ class LoadDoseData extends AbstractFixture implements OrderedFixtureInterface
                 'volume' => 15,
             ],
             [
-                'drink'   => 'Jus de pommes',
-                'volume' => 10,
-            ],
-            [
                 'drink'   => 'Jus d\'ananas',
                 'volume' => 12,
             ],
