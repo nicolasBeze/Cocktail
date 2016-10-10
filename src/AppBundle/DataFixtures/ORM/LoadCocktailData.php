@@ -54,15 +54,6 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'Jus d\'oranges12',
                     'Sirop de grenadine2'
                 ]
-            ],
-            [
-                'name'  => 'Vodka Pomme',
-                'description'   => '',
-                'image' => 'vodka-pomme.jpg',
-                'doses' => [
-                    'Vodka3',
-                    'Jus de pommes10'
-                ]
             ]
 
         ];

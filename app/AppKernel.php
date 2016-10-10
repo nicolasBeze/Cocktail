@@ -8,7 +8,6 @@ class AppKernel extends Kernel
     public function __construct($environment, $debug)
     {
         date_default_timezone_set('Europe/Paris');
-        ini_set ('user_agent', $_SERVER['HTTP_USER_AGENT']);
         parent::__construct($environment, $debug);
     }
 
