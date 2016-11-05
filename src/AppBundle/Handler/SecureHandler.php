@@ -10,7 +10,7 @@ namespace AppBundle\Handler;
  */
 class SecureHandler
 {
-    private $file = __DIR__.'/../../../web/secure/secure.txt';
+    private $file = __DIR__.'/../../../web/secure.txt';
 
     public function checkAndCreateSecurity(){
         if(file_exists($this->file)){

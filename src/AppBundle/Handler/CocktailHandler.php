@@ -46,8 +46,8 @@ class CocktailHandler
             $compartment->setRemainingVolume($compartment->getRemainingVolume() - $dose->getVolume());
             $this->serveDose($compartment->getPinGpio(), $dose);
             $this->em->persist($compartment);
-            $this->em->flush();
         }
+        $this->em->flush();
     }
 
     public function addConsumption(Cocktail $cocktail){
@@ -58,7 +58,6 @@ class CocktailHandler
     }
 
     public function serveDose($pinGpio, Dose $dose){
-
         $time = $dose->getVolume() * $dose->getDrink()->getViscosity();
         exec(sprintf("gpio mode %d out", $pinGpio));
         sleep($time);

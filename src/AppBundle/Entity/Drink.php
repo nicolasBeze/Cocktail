@@ -44,8 +44,8 @@ class Drink {
     private $image;
 
     /**
-     * @ORM\Column(name="viscosity", type="integer")
-     * @var integer
+     * @ORM\Column(name="viscosity", type="float")
+     * @var float
      */
     private $viscosity;
 
