@@ -36,115 +36,22 @@ class LoadDoseData extends AbstractFixture implements OrderedFixtureInterface
 
     public function arrayData()
     {
-        return [
-            [
-                'drink'   => 'Vodka',
-                'volume' => 2,
-            ],
-            [
-                'drink'   => 'Vodka',
-                'volume' => 3,
-            ],
-            [
-                'drink'   => 'Vodka',
-                'volume' => 4,
-            ],
-            [
-                'drink'   => 'Vodka',
-                'volume' => 5,
-            ],
-            [
-                'drink'   => 'Rhum blanc',
-                'volume' => 2,
-            ],
-            [
-                'drink'   => 'Rhum blanc',
-                'volume' => 4,
-            ],
-            [
-                'drink'   => 'Rhum blanc',
-                'volume' => 6,
-            ],
-            [
-                'drink'   => 'Rhum brun',
-                'volume' => 2,
-            ],
-            [
-                'drink'   => 'Rhum brun',
-                'volume' => 4,
-            ],
-            [
-                'drink'   => 'Rhum brun',
-                'volume' => 6,
-            ],
-            [
-                'drink'   => 'Tequila',
-                'volume' => 2,
-            ],
-            [
-                'drink'   => 'Tequila',
-                'volume' => 4,
-            ],
-            [
-                'drink'   => 'Tequila',
-                'volume' => 6,
-            ],
-            [
-                'drink'   => 'Triple sec',
-                'volume' => 70,
-            ],
-            [
-                'drink'   => 'Curaçao',
-                'volume' => 4,
-            ],
-            [
-                'drink'   => 'Curaçao',
-                'volume' => 8,
-            ],
-            [
-                'drink'   => 'Curaçao',
-                'volume' => 12,
-            ],
-            [
-                'drink'   => 'Sucre de canne',
-                'volume' => 3,
-            ],
-            [
-                'drink'   => 'Sirop de citrons',
-                'volume' => 2,
-            ],
-            [
-                'drink'   => 'Sirop de citrons',
-                'volume' => 3,
-            ],
-            [
-                'drink'   => 'Sirop de grenadine',
-                'volume' => 2,
-            ],
-            [
-                'drink'   => 'Sirop de grenadine',
-                'volume' => 3,
-            ],
-            [
-                'drink'   => 'Jus d\'oranges',
-                'volume' => 10,
-            ],
-            [
-                'drink'   => 'Jus d\'oranges',
-                'volume' => 12,
-            ],
-            [
-                'drink'   => 'Jus d\'oranges',
-                'volume' => 15,
-            ],
-            [
-                'drink'   => 'Jus d\'ananas',
-                'volume' => 12,
-            ],
-            [
-                'drink'   => 'Jus d\'ananas',
-                'volume' => 15,
-            ]
-        ];
+
+        $drinks = [
+            'ma', 'vo', 'bl', 'br',
+            'te', 'tr', 'cu', 'co',
+            'sc', 'ci', 'gr', 'or',
+            'cr', 'an', 'ea', 'ch'
+            ];
+        $dataDoses = [];
+        foreach($drinks as $drink){
+            for($i = 1; $i < 25; $i++){
+                $dataDoses[] = [
+                    'drink'   => $drink,
+                    'volume' => $i,
+                ];
+            }
+        }
+        return $dataDoses;
     }
 }

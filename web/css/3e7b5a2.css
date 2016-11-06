@@ -7380,6 +7380,14 @@ img { width: 100%; }
     display: none;
 }
 
+.image {
+    height: 200px;
+}
+
+.max-image {
+    max-height: 200px;
+}
+
 .imageAndText {}
 
 .infoListCocktail:hover {
@@ -7438,4 +7446,17 @@ img { width: 100%; }
     bottom: 0px;
     width:46px;
     z-index: 1;
+}
+
+#compte_a_rebours {
+    display: none;
+    padding: 20px;
+    background-color: #204d74;
+    color: white;
+}
+
+.impossible{
+    padding: 20px;
+    background-color: #ac2925;
+    color: white;
 }

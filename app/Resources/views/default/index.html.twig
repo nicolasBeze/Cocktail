@@ -8,7 +8,7 @@
             <div class="imageAndText">
                <a href="{{ path('showCocktail', { 'cocktail': cocktail.id }) }}">
                    <div class="image">
-                       <img src="{{ asset('bundles/app/images/'~cocktail.image.url) }}" alt="{{ cocktail.image.alt }}" />
+                       <img class="max-image" src="{{ asset('bundles/app/images/'~cocktail.image.url) }}" alt="{{ cocktail.image.alt }}" />
                    </div>
                </a>
                <div class="infoListCocktail left">

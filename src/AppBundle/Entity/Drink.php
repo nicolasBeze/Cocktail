@@ -18,9 +18,17 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Drink {
 
-    const VISCOSITY_ALCOOL = 1;
-    const VISCOSITY_JUICE = 1.2;
-    const VISCOSITY_SIROP = 2.3;
+    const VISCOSITY_ALCOOL = 1.74;
+    const VISCOSITY_COINTREAU = 2.31;
+    const VISCOSITY_ANANAS = 1.67;
+    const VISCOSITY_ORANGE = 1.63;
+    const VISCOSITY_CRANBERRY = 1.37;
+    const VISCOSITY_CITRON = 7.46;
+    const VISCOSITY_GRENADINE = 10;
+    const VISCOSITY_SUCRE_DE_CANNE = 20;
+    const VISCOSITY_CURACAO = 1;
+    const VISCOSITY_CHAMBORD = 1;
+    const VISCOSITY_EAU_GAZEUSE = 1;
 
     /**
      * @ORM\Column(name="id", type="integer")
