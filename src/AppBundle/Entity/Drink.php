@@ -26,9 +26,9 @@ class Drink {
     const VISCOSITY_CITRON = 7.46;
     const VISCOSITY_GRENADINE = 10;
     const VISCOSITY_SUCRE_DE_CANNE = 20;
-    const VISCOSITY_CURACAO = 1;
-    const VISCOSITY_CHAMBORD = 1;
-    const VISCOSITY_EAU_GAZEUSE = 1;
+    const VISCOSITY_CURACAO = 2;
+    const VISCOSITY_CHAMBORD = 2;
+    const VISCOSITY_EAU_GAZEUSE = 1.45;
 
     /**
      * @ORM\Column(name="id", type="integer")
