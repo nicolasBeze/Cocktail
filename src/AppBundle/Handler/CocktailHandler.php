@@ -8,8 +8,10 @@ use AppBundle\Entity\Consumption;
 use AppBundle\Entity\Dose;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\EntityManager;
+use Symfony\Component\Console\Helper\ProgressBar;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Process\Process;
 
 /**
  * Created by PhpStorm.
@@ -28,12 +30,24 @@ class CocktailHandler
      * @var SecureHandler
      */
     private $secureHandler;
+    /**
+     * @var ProgressBar
+     */
+    private $progessBar;
 
     public function __construct(EntityManager $em, SecureHandler $secureHandler)
     {
         $this->em = $em;
         $this->compartmentRepository = $this->em->getRepository('AppBundle:Compartment');
         $this->secureHandler = $secureHandler;
+    }
+
+    /**
+     * @param ProgressBar $progressBar
+     */
+    public function setProgressBar(ProgressBar $progressBar)
+    {
+        $this->progessBar = $progressBar;
     }
 
     public function remainingVolume(Cocktail $cocktail){
@@ -66,10 +80,19 @@ class CocktailHandler
     }
 
     public function serveDose($pinGpio, Dose $dose){
+        $timeElapsed = 0;
         $time = $dose->getVolume() * $dose->getDrink()->getViscosity();
-        exec(sprintf("gpio mode %d out", $pinGpio));
-        sleep($time);
-        exec(sprintf("gpio mode %d in", $pinGpio));
+        $sleepProcess = new Process('sleep 1');
+
+        (new Process(sprintf('gpio mode %d out', $pinGpio)))->mustRun();
+        while ($timeElapsed < $time) {
+            $sleepProcess->mustRun();
+            if (null !== $this->progessBar) {
+                $this->progessBar->advance();
+            }
+            ++$timeElapsed;
+        }
+        (new Process(sprintf('gpio mode %d in', $pinGpio)))->mustRun();
     }
 
     public function serveCocktail(Collection $doses)
