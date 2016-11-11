@@ -2,6 +2,7 @@
 
 namespace AppBundle\Repository;
 
+use AppBundle\Entity\Drink;
 use Doctrine\ORM\EntityRepository;
 
 /**
@@ -12,5 +13,15 @@ use Doctrine\ORM\EntityRepository;
  */
 class CocktailRepository extends EntityRepository
 {
-
+    public function findCocktailWithDrink(Drink $drink)
+    {
+        return $this->createQueryBuilder('c')
+            ->join('c.doses', 'd')
+            ->join('d.drink', 'k')
+            ->where('k = :drink')
+            ->setParameter('drink', $drink)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
 }

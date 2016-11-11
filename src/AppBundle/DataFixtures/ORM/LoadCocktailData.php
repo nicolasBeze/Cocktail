@@ -31,6 +31,7 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
             foreach ($data['doses'] as $dose){
                 $cocktail->addDose($this->getReference($dose));
             }
+            $cocktail->setAlcohol($data['alcohol']);
             $manager->persist($cocktail);
         }
 
@@ -54,7 +55,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'ch2',
                     'an5',
                     'cr6'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Tequila Sunrise',
@@ -64,7 +66,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'te6',
                     'or12',
                     'gr2'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Afterglow',
@@ -74,7 +77,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'or8',
                     'an8',
                     'gr2'
-                ]
+                ],
+                'alcohol' => false,
             ],
             [
                 'name'  => 'Cocaïne liquide',
@@ -84,7 +88,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'vo2',
                     'te2',
                     'cu2'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Screwdriver',
@@ -93,7 +98,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                 'doses' => [
                     'vo4',
                     'or12'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Blue Shark',
@@ -103,7 +109,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'vo4',
                     'te4',
                     'cu1'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Bombe de bastille',
@@ -113,7 +120,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'gr3',
                     'cu1',
                     'tr2'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Volga',
@@ -123,7 +131,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'cu4',
                     'vo4',
                     'tr4'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Brassmonkey',
@@ -133,7 +142,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'vo2',
                     'bl2',
                     'or12'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Tequila dry cocktail',
@@ -143,7 +153,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'te8',
                     'tr3',
                     'ma3'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'French martini',
@@ -153,7 +164,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'vo5',
                     'ch1',
                     'an1'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Madras',
@@ -163,7 +175,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'vo5',
                     'cr12',
                     'or3'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Larimar',
@@ -173,7 +186,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'ma4',
                     'cu3',
                     'or7'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Soir de france',
@@ -184,7 +198,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'tr4',
                     'gr3',
                     'cu1'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Extradition',
@@ -194,7 +209,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'vo2',
                     'cu2',
                     'ea2'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Black Pearl',
@@ -203,7 +219,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                 'doses' => [
                     'vo6',
                     'ch3'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Fêtard',
@@ -213,7 +230,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'ma5',
                     'tr1',
                     'an6'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Girls on Sunrise',
@@ -224,7 +242,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'tr3',
                     'or10',
                     'gr1'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Sunburn',
@@ -234,7 +253,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'tr3',
                     'te3',
                     'cr8'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'TNT2',
@@ -244,7 +264,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'or4',
                     'tr4',
                     'bl4'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Crantini',
@@ -253,7 +274,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                 'doses' => [
                     'vo5',
                     'cr4'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Bob Greenstock',
@@ -265,7 +287,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'cu2',
                     'gr1',
                     'or8'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Leviathan',
@@ -276,7 +299,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'ma3',
                     'or3',
                     'tr1'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Pink Palace',
@@ -287,7 +311,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'ch3',
                     'cr4',
                     'ea8',
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'French Pearl',
@@ -296,7 +321,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                 'doses' => [
                     'co3',
                     'tr3'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Dark Purple',
@@ -306,7 +332,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'gr3',
                     'cu2',
                     'vo2'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Olympic',
@@ -316,7 +343,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'co4',
                     'tr1',
                     'or2'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Madmix',
@@ -327,7 +355,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'gr1',
                     'bl8',
                     'cu1'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => '007 Pineapple',
@@ -337,7 +366,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'ma2',
                     'vo6',
                     'an12'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Ice bet',
@@ -346,7 +376,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                 'doses' => [
                     'te3',
                     'tr3'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Planteur',
@@ -358,7 +389,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'an2',
                     'or2',
                     'gr1'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Planter\'s Punch',
@@ -369,7 +401,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'ci2',
                     'or2',
                     'gr1'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Petit Punch Vieux',
@@ -379,7 +412,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'br4',
                     'sc1',
                     'ci1'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Apple Jack',
@@ -389,7 +423,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'ci1',
                     'gr1',
                     'co5'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Russian',
@@ -403,7 +438,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'an3',
                     'cr3',
                     'or3'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Daiquiri',
@@ -413,7 +449,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'sc1',
                     'ci2',
                     'bl4'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Side-car',
@@ -423,7 +460,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'tr2',
                     'ci2',
                     'co5'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Margarita',
@@ -433,7 +471,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'ci2',
                     'tr3',
                     'te5'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'cosmopolitan',
@@ -444,7 +483,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'tr2',
                     'vo4',
                     'cr4'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'El Diablo',
@@ -455,7 +495,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'gr2',
                     'te4',
                     'ea12'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Cognac Sour',
@@ -465,7 +506,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'sc2',
                     'ci2',
                     'co5'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Blue Lagoon',
@@ -475,7 +517,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'ci2',
                     'cu3',
                     'vo4'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Kamikaze blue',
@@ -485,7 +528,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'ci2',
                     'vo2',
                     'cu2'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Red lion',
@@ -496,7 +540,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'tr3',
                     'te2',
                     'or1'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Mary Pickford',
@@ -506,7 +551,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'gr1',
                     'bl4',
                     'an3'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Bella luna',
@@ -516,7 +562,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'ci2',
                     'an6',
                     'or10'
-                ]
+                ],
+                'alcohol' => false,
             ],
             [
                 'name'  => 'Fruits cup',
@@ -527,7 +574,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'gr1',
                     'or12',
                     'an6'
-                ]
+                ],
+                'alcohol' => false,
             ],
             [
                 'name'  => 'Fruit Punch',
@@ -539,7 +587,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'or8',
                     'an6',
                     'cr6'
-                ]
+                ],
+                'alcohol' => false,
             ],
             [
                 'name'  => 'Florida',
@@ -549,7 +598,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'gr3',
                     'ci2',
                     'or10'
-                ]
+                ],
+                'alcohol' => false,
             ],
             [
                 'name'  => 'Allez les bleus',
@@ -559,7 +609,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'ci1',
                     'co3',
                     'cu1'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Bacardi Cocktail',
@@ -569,7 +620,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'gr1',
                     'ci2',
                     'bl5'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Ponche Caribenu',
@@ -579,7 +631,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'ci1',
                     'bl3',
                     'or7'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Hasta Siempre',
@@ -589,7 +642,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'br4',
                     'cu3',
                     'an8'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Zizi coincoin',
@@ -598,7 +652,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                 'doses' => [
                     'ci4',
                     'tr8'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Cointreaupolitan',
@@ -608,7 +663,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'ci2',
                     'tr5',
                     'cr3'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Balalaïka',
@@ -618,7 +674,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'ci2',
                     'tr2',
                     'vo3'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Basic martini',
@@ -628,7 +685,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'ci1',
                     'ma2',
                     'vo5'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Cendrillon',
@@ -638,7 +696,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'ci3',
                     'or3',
                     'an3'
-                ]
+                ],
+                'alcohol' => false,
             ],
             [
                 'name'  => 'Spider bite',
@@ -647,7 +706,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                 'doses' => [
                     'ci1',
                     'te3'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Cape Codder',
@@ -657,7 +717,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'ci1',
                     'vo5',
                     'cr16'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Purple Cosmopolitan',
@@ -668,7 +729,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'vo4',
                     'cu2',
                     'cr3'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Cosmo Créole',
@@ -678,7 +740,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'ci1',
                     'bl4',
                     'cr4'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Chill out',
@@ -688,7 +751,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'ci1',
                     'br4',
                     'tr4'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Viva Villa',
@@ -698,7 +762,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'sc1',
                     'ci2',
                     'te4'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Pikaki',
@@ -710,7 +775,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'br4',
                     'or2',
                     'an1'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Halloween Black Spider',
@@ -721,7 +787,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'tr2',
                     'vo2',
                     'cr2'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Wodka gimlet',
@@ -730,7 +797,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                 'doses' => [
                     'ci2',
                     'vo4'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Martini blue',
@@ -741,7 +809,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'ci2',
                     'ma2',
                     'cu3'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Tequila Collins',
@@ -752,7 +821,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'ci2',
                     'te4',
                     'ea8'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Cactus jack',
@@ -764,7 +834,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'cu1',
                     'an1',
                     'or2'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Cointreau Bubbles',
@@ -774,7 +845,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'ci1',
                     'tr4',
                     'ea8'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Razzita',
@@ -783,7 +855,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                 'doses' => [
                     'ci1',
                     'br5'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Springtime Cooler',
@@ -795,7 +868,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'vo4',
                     'cu2',
                     'or6'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Cointreaupirinha',
@@ -804,7 +878,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                 'doses' => [
                     'ci2',
                     'tr4'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Peg o\' My Heart',
@@ -814,7 +889,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'ci3',
                     'gr2',
                     'bl6'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Vera Rush',
@@ -823,7 +899,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                 'doses' => [
                     'br6',
                     'an4'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Chambord célébration',
@@ -834,7 +911,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'ch4',
                     'vo2',
                     'ea8'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Turquoise Blue',
@@ -846,7 +924,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'bl2',
                     'cu2',
                     'an3'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Simpson bay',
@@ -856,7 +935,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'gr1',
                     'cu2',
                     'br4'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Punch agrume',
@@ -866,7 +946,8 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'ci2',
                     'bl4',
                     'or6'
-                ]
+                ],
+                'alcohol' => true,
             ],
             [
                 'name'  => 'Tchaker',
@@ -877,8 +958,9 @@ class LoadCocktailData extends AbstractFixture implements OrderedFixtureInterfac
                     'gr1',
                     'te3',
                     'an6'
-                ]
-            ]
+                ],
+                'alcohol' => true,
+            ],
         ];
     }
 }

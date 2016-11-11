@@ -2,6 +2,23 @@
 
 {% block body %}
     <section class="row">
+        <div class="col-md-12 col-sm-12">
+            {{ form_start(form) }}
+                <div class="row">
+                    <div class="col-sm-3">
+                        {{ form_row(form.drink) }}
+                    </div>
+                    <div class="col-md-1 col-sm-6">
+                        {{ form_row(form.submit, {'attr': {'class': 'btn btn-success'}}) }}
+                    </div>
+                    <div class="col-sm-2">
+                        <a href="{{ path('homepage', {'soft': app.request.get('soft') ? 0 : 1}) }}" class="btn btn-primary">
+                            {% if app.request.get('soft') %}Tous les cocktails{% else %}Sans Alcools{% endif %}
+                        </a>
+                    </div>
+                </div>
+            {{ form_end(form) }}
+        </div>
     {% for cocktail in cocktails %}
         <div class="col-xs-6 col-sm-3 col-md-2 center">
            <a class="name" href="{{ path('showCocktail', { 'cocktail': cocktail.id }) }}">{{ cocktail.name }}</a>
