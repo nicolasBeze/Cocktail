@@ -8,6 +8,8 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -27,12 +29,10 @@ class Consumption {
     private $id;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Cocktail")
-     * @ORM\JoinColumn(nullable=false)
-     * @var Cocktail
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Dose", cascade={"persist"})
+     * @var ArrayCollection
      */
-    private $cocktail;
-
+    private $doses;
     /**
      * @ORM\Column(name="date", type="date")
      * @var Datetime
@@ -42,6 +42,7 @@ class Consumption {
     public function __construct()
     {
         $this->date = new \DateTime();
+        $this->doses = new ArrayCollection();
     }
 
     /**
@@ -61,19 +62,39 @@ class Consumption {
     }
 
     /**
-     * @return Cocktail
+     * @param Collection $doses
      */
-    public function getCocktail()
+    public function setDoses(Collection $doses)
     {
-        return $this->cocktail;
+        $this->doses = $doses;
     }
 
     /**
-     * @param Cocktail $cocktail
+     * @param Dose $dose
      */
-    public function setCocktail(Cocktail $cocktail)
+    public function addDose(Dose $dose)
     {
-        $this->cocktail = $cocktail;
+        if ($this->doses->contains($dose)) {
+            return;
+        }
+
+        $this->doses->add($dose);
+    }
+
+    /**
+     * @param Dose $dose
+     */
+    public function removeDose(Dose $dose)
+    {
+        $this->doses->removeElement($dose);
+    }
+
+    /**
+     * @return ArrayCollection Dose
+     */
+    public function getDoses()
+    {
+        return $this->doses;
     }
 
     /**

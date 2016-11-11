@@ -36,6 +36,15 @@
         <div class="col-xs-6 col-sm-4 col-md-3 center">
             <div id="compte_a_rebours" >Cocktail en préparation...</div>
         </div>
+        <div class="col-md-6">
+            <div class="well">
+                <h2>Changer le cocktail par défaut</h2>
+                {{ form_start(form, {'attr': {'id': 'makeCustomCocktailForm'}}) }}
+                    {{ form_row(form.doses) }}
+                    {{ form_row(form.save, {'label': 'Servir', 'attr': {'class': 'btn btn-primary'}}) }}
+                {{ form_end(form) }}
+            </div>
+        </div>
     </section>
 {% endblock %}
 

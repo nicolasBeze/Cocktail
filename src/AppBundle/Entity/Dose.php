@@ -44,7 +44,7 @@ class Dose {
      * @var integer
      */
     private $remainingVolume;
-    
+
 
     /**
      * @return int
@@ -109,7 +109,4 @@ class Dose {
     {
         $this->remainingVolume = $remainingVolume;
     }
-    
-    
-
 }

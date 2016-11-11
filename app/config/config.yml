@@ -74,4 +74,4 @@ assetic:
         cssrewrite: ~
 
 fos_js_routing:
-    routes_to_expose: [ makeCocktail ]
+    routes_to_expose: [ makeCocktail, makeCustomCocktail ]
