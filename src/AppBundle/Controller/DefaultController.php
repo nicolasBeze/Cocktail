@@ -3,6 +3,8 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Cocktail;
+use AppBundle\Form\CocktailType;
+use AppBundle\Form\CustomCocktailType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use AppBundle\Form\MakeType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -34,10 +36,13 @@ class DefaultController extends Controller
      */
     public function showAction(Cocktail $cocktail)
     {
-        $cocktail = $this->get('cocktail_handler')->remainingVolume($cocktail);
+        $this->get('cocktail_handler')->remainingVolume($cocktail);
+
+        $form = $this->createForm(CustomCocktailType::class, $cocktail);
 
         return $this->render('default/show.html.twig', [
-            'cocktail' => $cocktail
+            'cocktail' => $cocktail,
+            'form' => $form->createView(),
         ]);
     }
 }

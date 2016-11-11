@@ -10,10 +10,14 @@ namespace AppBundle\Controller;
 
 
 use AppBundle\Entity\Cocktail;
+use AppBundle\Entity\Dose;
+use AppBundle\Entity\Drink;
 use AppBundle\Form\CocktailType;
+use Doctrine\Common\Collections\ArrayCollection;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -65,19 +69,31 @@ class CocktailController extends Controller
     }
 
     /**
-     * @return \Symfony\Component\HttpFoundation\RedirectResponse
      * @Route("/make/cocktail/{cocktail}", name="makeCocktail", requirements={"id" = "\d+"})
      * @ParamConverter("cocktail")
      */
     public function makeCocktailAction(Cocktail $cocktail)
     {
-        if(!$this->get('secure_handler')->checkAndCreateSecurity()){
-            return new Response('erreur');
-        }
-        $this->get('cocktail_handler')->addConsumption($cocktail);
-        $this->get('cocktail_handler')->updateCompartment($cocktail);
-        $this->get('secure_handler')->deletedSecurity();
+        return $this->get('cocktail_handler')->serveCocktail($cocktail->getDoses());
+    }
 
-        return new Response();
+    /**
+     * @Route("/make/custom/cocktail", name="makeCustomCocktail")
+     */
+    public function makeCustomCocktailAction(Request $request)
+    {
+        $doses = $request->request->all()['custom_cocktail']['doses'];
+        $drinkRepository = $this->getDoctrine()->getRepository(Drink::class);
+        $cocktailDoses = new ArrayCollection();
+
+        foreach ($doses as $dose) {
+            $cocktailDose = new Dose();
+            $cocktailDose->setDrink($drinkRepository->find($dose['drink']));
+            $cocktailDose->setVolume($dose['volume']);
+
+            $cocktailDoses->add($cocktailDose);
+        }
+
+        return $this->get('cocktail_handler')->serveCocktail($cocktailDoses);
     }
 }
