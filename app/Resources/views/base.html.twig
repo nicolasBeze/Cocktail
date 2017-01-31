@@ -20,16 +20,10 @@
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="{{ path('homepage') }}">Home</a></li>
                             <li><a href="{{ path('compartment') }}">Réserve</a></li>
-                            <li><a href="{{ path('drink') }}">Boissons</a></li>
-                            <li><a href="{{ path('cocktail') }}">Cocktails</a></li>
-                            <li><a href="{{ path('consumption') }}">Consommation</a></li>
+                            <li class="hidden-xs"><a href="{{ path('drink') }}">Boissons</a></li>
+                            <li class="hidden-xs"><a href="{{ path('cocktail') }}">Cocktails</a></li>
+                            <li class="hidden-xs"><a href="{{ path('consumption') }}">Consommation</a></li>
                         </ul>
-                        <form class="navbar-form navbar-right inline-form">
-                            <div class="form-group">
-                                <input type="search" class="input-sm form-control" placeholder="Recherche">
-                                <button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-eye-open"></span> Chercher</button>
-                            </div>
-                        </form>
                     </div>
                 </nav>
             {% endblock %}

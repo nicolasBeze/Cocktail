@@ -30,6 +30,7 @@ class Drink {
     const VISCOSITY_CHAMBORD = 2;
     const VISCOSITY_EAU_GAZEUSE = 1.45;
 
+
     /**
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -135,6 +136,11 @@ class Drink {
     public function setViscosity($viscosity)
     {
         $this->viscosity = $viscosity;
+    }
+
+    public function constantList(){
+        $reflect = new \ReflectionClass(get_class($this));
+        return $reflect->getConstants();
     }
 
 

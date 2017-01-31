@@ -17,14 +17,15 @@ class DrinkType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $drink = new Drink();
+        $viscosity = [];
+        foreach($drink->constantList() as $key => $value){
+            $viscosity[$key] = $value;
+        }
         $builder
             ->add('name')
             ->add('viscosity', ChoiceType::class, array(
-                'choices'  => [
-                    Drink::VISCOSITY_ALCOOL => Drink::VISCOSITY_ALCOOL,
-                    Drink::VISCOSITY_JUICE => Drink::VISCOSITY_JUICE,
-                    Drink::VISCOSITY_SIROP => Drink::VISCOSITY_SIROP
-                ]
+                'choices'  => $viscosity
             ))
             ->add('image', ImageType::class)
             ->add('save', SubmitType::class, array('label' => 'Créer'))
