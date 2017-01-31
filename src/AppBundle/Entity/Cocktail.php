@@ -52,6 +52,14 @@ class Cocktail
      */
     private $doses;
 
+    /**
+     * @var boolean
+     *
+     * @ORM\Column(type="boolean")
+     */
+    private $alcohol;
+
+
     public function __construct()
     {
         $this->doses = new ArrayCollection();
@@ -146,6 +154,22 @@ class Cocktail
     public function getDoses()
     {
         return $this->doses;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function isAlcohol()
+    {
+        return $this->alcohol;
+    }
+
+    /**
+     * @param boolean $alcohol
+     */
+    public function setAlcohol($alcohol)
+    {
+        $this->alcohol = $alcohol;
     }
 
     /**
