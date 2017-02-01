@@ -42,10 +42,10 @@ $(document).ready(function() {
         var affiche = '';
 
         if (dcpt > 1) {
-            affiche = 'Cocktail prêt dans ' + dcpt + ' secondes';
+            affiche = 'Cocktail prêt dans ' + Math.round(dcpt) + ' secondes';
         }
         else {
-            affiche = 'Cocktail prêt dans ' + dcpt + ' seconde';
+            affiche = 'Cocktail prêt dans ' + Math.round(dcpt) + ' seconde';
         }
         $("#compte_a_rebours").html(affiche);
         dcpt -= 1;
